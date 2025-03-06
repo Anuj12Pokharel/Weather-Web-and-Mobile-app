@@ -1,0 +1,209 @@
+/* Global reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fullpage body styling */
+body {
+  display: flex;
+  flex-direction: column;
+  background: #5f41e4;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* Fullpage weather container */
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0;
+  transition: background 0.5s ease;
+}
+
+/* Background styles for fullpage effect */
+.default-bg {
+  background: linear-gradient(135deg, rgba(131, 164, 212, 0.8), rgba(182, 251, 255, 0.8)),
+              url('https://www.shutterstock.com/image-vector/blue-sky-clouds-anime-style-600nw-2157978867.jpg')
+              no-repeat center center/cover;
+}
+
+.sunny-bg {
+  background: linear-gradient(135deg, rgba(195, 127, 240, 0.93), rgba(240, 182, 255, 0.8)),
+              url('https://st3.depositphotos.com/1324256/18719/i/450/depositphotos_187196986-stock-photo-asphalt-road-sparkle-hot-sun.jpg')
+              no-repeat center center/cover;
+}
+
+.cloudy-bg {
+  background: linear-gradient(135deg, rgba(131, 164, 212, 0.8), rgba(182, 251, 255, 0.8)),
+              url('https://www.rochesterfirst.com/wp-content/uploads/sites/66/2021/04/storm-466677_1920.jpg?w=900')
+              no-repeat center center/cover;
+}
+
+.rainy-bg {
+  background: linear-gradient(135deg, rgba(78, 84, 200, 0.8), rgba(143, 148, 251, 0.8)),
+              url('https://static.vecteezy.com/system/resources/previews/012/098/044/non_2x/illustration-of-heavy-rain-cloudy-weather-with-cartoon-animation-style-rainy-scenery-background.jpg')
+              no-repeat center center/cover;
+}
+
+.snowy-bg {
+  background: linear-gradient(135deg, rgba(224, 234, 252, 0.8), rgba(207, 223, 243, 0.8)),
+              url('https://plus.unsplash.com/premium_photo-1676747433701-ebe10f095b77?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c25vd3klMjBkYXl8ZW58MHx8MHx8fDA%3D')
+              no-repeat center center/cover;
+}
+
+/* Top section: location, date/time, and search box */
+.weather-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.location-and-date {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.location {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.date,
+.time {
+  font-size: 1rem;
+  margin-top: 0.3rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-box input {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 999px;
+  outline: none;
+  width: 150px;
+}
+
+.search-box button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-box button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Error message */
+.error {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 0, 0, 0.2);
+  color: #fff;
+  border-radius: 8px;
+}
+
+/* Main weather info: big temperature and description */
+.weather-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.temperature {
+  font-size: 5rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.weather-description {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+/* Dynamic and responsive grid for weather details */
+.weather-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-left: 5px solid #ffd700;
+  border-radius: 8px;
+  margin: 1rem;
+}
+
+.weather-detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-detail-icon {
+  font-size: 1.5rem;
+}
+
+.weather-detail-label {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.weather-detail-value {
+  margin-top: 0.25rem;
+}
+
+/* Forecast card styling */
+.forecast-card {
+  background: rgba(7, 0, 0, 0.068);
+  border-radius: 2rem;
+  padding: 1rem;
+  margin-top: auto;
+  text-align: center;
+}
+
+.forecast-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.forecast-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
